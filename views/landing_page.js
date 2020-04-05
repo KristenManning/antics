@@ -21,11 +21,14 @@ $(document).ready(function() {
         join.hide();
     }
 
-
     $("#create").click(function() {
       show_create_room_details();
     });
     $("#join").click(function() {
       show_join_room_details();
+    });
+
+    $("create").click(function() {
+      show_create_room_details();
     });
 });
