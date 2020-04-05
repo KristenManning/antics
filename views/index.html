@@ -9,42 +9,19 @@
             Welcome to BrilliAntics!
         </h1>
 
-        <button type="button" onclick="show_create_room_details()">Create a new room</button>
-        <button type="button" onclick="show_join_room_details()">Join a new room</button>
+        <button type="button">Create a new room</button>
+        <button type="button">Join a new room</button>
         <!-- Create new room -->
         <div id="create_room_button" style="display: none">
             <h4>Create a room</h4>
             <h5>Room name:</h5> <input type="text" name="room_name">
             <h5>Your name:</h5> <input type="text" name="player_name">
         </div>
-            <script type="text/javascript">
-                function show_create_room_details() {
-                    var x = document.getElementById("create_room_button");
-                    if(x.style.display === 'none') {
-                        x.style.display = 'block';
-                    }
-                    else {
-                        x.style.display = 'none';
-                    }
-                }
-            </script>
-
         <!-- Join existing room -->
         <div id="join_existing_room" style="display: none">
             <h4>Enter your room name</h4>
             <input type="text" name="room_name">
         </div>
-            <script type="text/javascript">        
-                function show_join_room_details() {
-                    var y document.getElementById("join_existing_room");
-                    if(y.style.display === 'none') {
-                        y.style.display = 'block';
-                    }
-                    else {
-                        y.style.display = 'none';
-                    }
-                }
-            </script>
         <!-- JQuery -->
         <script
           src="https://code.jquery.com/jquery-3.4.1.min.js"

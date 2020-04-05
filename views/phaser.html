@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <canvas id="game_container">
+        <div id="create_room_button" style="display: none">
+            <h4>Create a room</h4>
+            <h5>Room name:</h5> <input type="text" name="room_name">
+            <h5>Your name:</h5> <input type="text" name="player_name">
+        </div>
+    </canvas>
+<script>
+    var config = {
+        type: Phaser.AUTO,
+        //width: 800,
+        //height: 600,
+        canvas: document.querySelector('#game_container'),
+        backgroundColor: "#16C1CA",
+        dom: {
+            createContainer: true
+        },
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: {y: 200}
+            }
+        },
+        scene: {
+            create: create,
+            preload: preload
+        }
+    };
+
+    var game = new Phaser.Game(config);
+
+    function preload() {
+        this.load.html('nameform', 'assets/text/loginform.html');
+    }
+
+    function create() {
+        this.add.text(150,100,"Welcome to BrilliAntics!", {
+            font: "40px Soleil", fill: "#000000"});
+        this.add.text(300,200,"Get started", {
+            font: "20px Soleil", fill: "#000000"
+        });
+        roomButton = this.add.rectangle(300,250,150,50,0xaaffaa);
+        this.add.text(230,250,"Create a new room",{
+            font:"15px Soleil", fill: "#000000"
+        });
+        roomButton.setInteractive();
+        roomButton.on('pointerup',function() {
+                var x = $("#create_room_button");
+                console.log(x)
+                x.show()
+            });
+    }
+
+    // function createRoomButton() {
+    //    getStartedRect = this.add.rectangle(400,250,150,50,0xaaffaa);
+    //    this.add.text(400,250,"Create a new room",{
+    //        font:"15px Soleil", fill: "#000000"
+    //    });
+    // }
+    // function roomDetails() {
+    //     console.log(this);
+    //     //element = this.add.dom(400,300).createFromCache('nameform');
+    // }
+    
+
+</script>
+</body>
+</html>
