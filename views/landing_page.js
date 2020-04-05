@@ -1,19 +1,31 @@
-function show_create_room_details() {
-                var x = document.getElementById("create_room_button");
-                if(x.style.display === 'none') {
-                    x.style.display = 'block';
-                }
-                else {
-                    x.style.display = 'none';
-                }
-            }
+$(document).ready(function() {
+    function show_create_room_details() {
+        var create = $("#create_room_button");
+        create.show();
+        hide_join_room_details()
+    }
 
-function show_join_room_details() {
-    var y document.getElementById("join_existing_room");
-    if(y.style.display === 'none') {
-        y.style.display = 'block';
+    function show_join_room_details() {
+        var join = $("#join_existing_room");
+        join.show();
+        hide_create_room_details()
     }
-    else {
-        y.style.display = 'none';
+
+    function hide_create_room_details() {
+        var create = $("#create_room_button");
+        create.hide();
     }
-}
+
+    function hide_join_room_details() {
+        var join = $("#join_existing_room");
+        join.hide();
+    }
+
+
+    $("#create").click(function() {
+      show_create_room_details();
+    });
+    $("#join").click(function() {
+      show_join_room_details();
+    });
+});
