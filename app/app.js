@@ -14,10 +14,14 @@ $(document).ready(function() {
 
 
   const db = firebase.database()
+  const roomname = "name"
+
+  db.ref().child('rooms').set([roomname, roomname])
 
   db.ref().on("value", function(snapshot) {
     const data = snapshot.val()["test-data"]
     console.log(data)
-    $("#test-data").html(data["test-word"])
+    $("#test-data").html(data["test-word"]) 
+   
   });
  });
