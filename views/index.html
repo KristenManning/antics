@@ -9,18 +9,24 @@
             Welcome to BrilliAntics!
         </h1>
 
-        <button type="button">Create a new room</button>
-        <button type="button">Join a new room</button>
+        <button id="create" type="button">Create a new room</button>
+        <button id="join" type="button">Join a new room</button>
         <!-- Create new room -->
         <div id="create_room_button" style="display: none">
-            <h4>Create a room</h4>
-            <h5>Room name:</h5> <input type="text" name="room_name">
-            <h5>Your name:</h5> <input type="text" name="player_name">
+            <div class="create-form">
+                <h4>Create a room</h4>
+                <h5>Room name:</h5> <input type="text" name="room_name" class='room_name'>
+                <h5>Your name:</h5> <input type="text" name="player_name" class='player_name'>
+                <button class="submit-create-room">Create Room</button>
+            </div>
         </div>
         <!-- Join existing room -->
         <div id="join_existing_room" style="display: none">
-            <h4>Enter your room name</h4>
-            <input type="text" name="room_name">
+            <div class="join-form">
+                <h4>Enter your room name</h4><input type="text" name="room_name" class='room_name'>
+                <h5>Your name:</h5> <input type="text" name="player_name" class='player_name'>
+                <button class="submit-join-room">Join Room</button>
+            </div>
         </div>
         <!-- JQuery -->
         <script
@@ -32,5 +38,6 @@
         <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
         <script type="text/javascript" src="../app/app.js"></script>
+        <script type="text/javascript" src="./landing_page.js"></script>
     </body>
 </html>
